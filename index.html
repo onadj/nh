@@ -1,1 +1,165 @@
-<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>CareHome Ireland – Home</title><meta name='description' content='Welcome to CareHome Ireland. Compassionate and modern elderly care.'><link rel='stylesheet' href='assets/css/style.css'></head><body><header><h1>Welcome to CareHome Ireland</h1><nav><a href='index.html'>Home</a> | <a href='contact.html'>Contact</a> | <a href='gallery.html'>Gallery</a></nav></header><section><h2>Experienced Staff</h2><p>Our team provides the best care possible.</p></section><footer><p>© 2025 CareHome Ireland</p></footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CareHome Ireland – Home</title>
+  <meta name="description" content="Welcome to CareHome Ireland. Compassionate and modern elderly care.">
+  <meta name="keywords" content="nursing home, elderly care, care home Ireland">
+  <meta name="author" content="CareHome Web Team">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      background-color: #fffaf3;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background-color: #fff6e6;
+      border-bottom: 1px solid #f0e6d6;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      color: #b88900 !important;
+    }
+    .nav-link {
+      color: #705f3b !important;
+      font-weight: 500;
+    }
+    .nav-link:hover {
+      color: #b88900 !important;
+    }
+    .hero-section {
+      position: relative;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      overflow: hidden;
+    }
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    .hero-overlay {
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .hero-overlay h1,
+    .hero-overlay p,
+    .hero-overlay a {
+      color: #fff;
+    }
+    .btn-primary {
+      background-color: #b88900;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #a07800;
+    }
+    section {
+      padding: 60px 0;
+    }
+    h2, h3 {
+      color: #a07b1d;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #fff6e6;
+      color: #705f3b;
+    }
+    footer a {
+      color: #b88900;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #a07800;
+    }
+    footer i {
+      color: #b88900;
+      transition: color 0.3s ease;
+    }
+    footer i:hover {
+      color: #a07800;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">CareHome Ireland</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="homes.html">Our Homes</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-section">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="assets/videos/welcomehero.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay text-white">
+      <h1 class="display-4 animate__animated animate__fadeInDown">Welcome to CareHome Ireland</h1>
+      <p class="lead animate__animated animate__fadeInUp">Compassionate care for a better life</p>
+      <a href="contact.html" class="btn btn-primary mt-3 animate__animated animate__fadeIn">Contact Us</a>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <img src="assets/images/staff.jpg" alt="Experienced Staff" class="img-fluid rounded mb-3">
+          <h3>Experienced Staff</h3>
+          <p>Our team provides the best care possible.</p>
+        </div>
+        <div class="col-md-4">
+          <img src="assets/images/facilities.jpg" alt="Modern Facilities" class="img-fluid rounded mb-3">
+          <h3>Modern Facilities</h3>
+          <p>Fully equipped rooms with 24/7 support.</p>
+        </div>
+        <div class="col-md-4">
+          <img src="assets/images/familycontact.jpg" alt="Family Communication" class="img-fluid rounded mb-3">
+          <h3>Family Communication</h3>
+          <p>Stay in touch with your loved ones through our portal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 text-center">
+    <div class="container">
+      <p class="mb-1">&copy; 2025 CareHome Ireland</p>
+      <a href="https://facebook.com" class="me-3" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="https://instagram.com" class="me-3" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="https://linkedin.com" class="me-3" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

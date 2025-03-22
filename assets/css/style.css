@@ -1,1 +1,100 @@
-/* CSS Placeholder */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #fffaf3;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navigacija */
+  .navbar {
+    background-color: #fff6e6;
+    border-bottom: 1px solid #f0e6d6;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    color: #b88900 !important;
+  }
+  
+  .nav-link {
+    color: #705f3b !important;
+    font-weight: 500;
+  }
+  
+  .nav-link:hover {
+    color: #b88900 !important;
+  }
+  
+  /* Hero sekcija */
+  .hero-section {
+    position: relative;
+    background: url('assets/images/hero.jpg') center/cover no-repeat;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+  }
+  
+  .hero-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .hero-overlay h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-overlay p {
+    font-size: 1.2rem;
+  }
+  
+  .hero-overlay .btn {
+    background-color: #b88900;
+    border: none;
+  }
+  
+  .hero-overlay .btn:hover {
+    background-color: #a07800;
+  }
+  
+  /* Sekcija sadržaja */
+  section {
+    padding: 60px 0;
+  }
+  
+  h2, h3 {
+    color: #a07b1d;
+    font-weight: bold;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #fff6e6;
+    color: #705f3b;
+  }
+  
+  footer a {
+    color: #b88900;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    color: #a07800;
+  }
+  
+  /* Ikone društvenih mreža */
+  footer i {
+    color: #b88900;
+    transition: color 0.3s ease;
+  }
+  
+  footer i:hover {
+    color: #a07800;
+  }
