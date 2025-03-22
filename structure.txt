@@ -1,0 +1,19 @@
+signacare-site/
+  index.html
+  contact.html
+  gallery.html
+  careers.html
+  faq.html
+  homes.html
+  thankyou.html
+  README.md
+  SEO.md
+  structure.txt
+  assets/
+    css/
+      style.css
+    js/
+      script.js
+    images/
+    videos/
+      welcome.mp4
