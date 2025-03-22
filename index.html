@@ -23,9 +23,8 @@
       background-color: #fff6e6;
       border-bottom: 1px solid #f0e6d6;
     }
-    .navbar-brand {
-      font-weight: bold;
-      color: #b88900 !important;
+    .navbar-brand img {
+      height: 50px;
     }
     .nav-link {
       color: #705f3b !important;
@@ -96,12 +95,48 @@
     footer i:hover {
       color: #a07800;
     }
+    .location-section {
+      margin-top: 60px;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .location-section iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 8px;
+    }
+    .location-section {
+    margin-top: 60px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .map-container iframe {
+    width: 80%;  /* Adjusted width to make the map narrower */
+    height: 300px;
+    border: 2px solid #a07b1d;  /* Color of the border matches the page theme */
+    border-radius: 8px;
+  }
+
+  .map-container iframe:hover {
+    border-color: #705f3b; /* Hover effect for the border */
+  }
   </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
     <div class="container">
-      <a class="navbar-brand" href="index.html">New Ross Community CareHome</a>
+      <a class="navbar-brand" href="index.html">
+        <img src="path-to-your-logo.png" alt="New Ross Community CareHome Logo" />
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -123,7 +158,7 @@
       <source src="assets/videos/welcomeherobr2.mp4" type="video/mp4" />
     </video>
     <div class="hero-overlay text-white">
-      <h1 class="display-4 animate__animated animate__fadeInDown">New Ross Community CareHome
+      <h1 class="display-4 animate__animated animate__fadeInDown">New Ross Community CareHome</h1>
       <p class="lead animate__animated animate__fadeInUp">Compassionate care for a better life</p>
       <a href="contact.html" class="btn btn-primary mt-3 animate__animated animate__fadeIn">Contact Us</a>
     </div>
@@ -151,9 +186,21 @@
     </div>
   </section>
 
+  <section class="location-section">
+    <h3 class="text-center" style="font-weight: bold; color: #a07b1d;">Our Location</h3>
+    <p class="text-center" style="color: #705f3b;">Address: Hospital Rd, Chambersland, New Ross, Co. Wexford</p>
+    <div class="map-container">
+      <!-- Google Maps iframe with location marker -->
+      <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCq5e_7XgUWu0VjmWw0nAFj0YnQ1RYmCk8&q=New+Ross+Community+Care+Home,Hospital+Rd,Chambersland,New+Ross,Co+Wexford" 
+      allowfullscreen="" loading="lazy"></iframe>
+  
+
+    </div>
+  </section>
+
   <footer class="py-4 text-center">
     <div class="container">
-      <p class="mb-1">&copy; Oliver Nad</p>
+      <p class="mb-1">&copy; 2025 CareHome Ireland</p>
       <a href="https://facebook.com" class="me-3" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
       <a href="https://instagram.com" class="me-3" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
       <a href="https://linkedin.com" class="me-3" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
