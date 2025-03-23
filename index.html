@@ -131,24 +131,21 @@
       height: 100%;
     }
 
-  .slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0; /* Početna vrijednost za fade efekt */
-  transition: opacity 1s ease-in-out; /* Dodajte prijelaz */
-}
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0; /* Početna vrijednost za fade efekt */
+      transition: opacity 1s ease-in-out; /* Dodajte prijelaz */
+    }
 
-  .slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-    
-
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
 </head>
 <body>
@@ -163,11 +160,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="homes.html">Our Homes</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
           <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
-          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
         </ul>
       </div>
     </div>
@@ -187,7 +183,6 @@
       <div class="slide">
         <img src="assets/images/soba.jpg" alt="Image 3">
       </div>
-    </div>
     </div>
     <div class="hero-overlay text-white">
       <h1 class="display-4 animate__animated animate__fadeInDown">Our Nursing Home</h1>
@@ -241,49 +236,49 @@
   <script>
     let slideIndex = 0;
 
-function showSlides() {
-  let slides = document.getElementsByClassName("slide");
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
 
-  // Sakrij trenutni slajd (fade-out)
-  if (slides[slideIndex]) {
-    slides[slideIndex].style.opacity = 0;
-  }
+      // Sakrij trenutni slajd (fade-out)
+      if (slides[slideIndex]) {
+        slides[slideIndex].style.opacity = 0;
+      }
 
-  // Prijeđi na sljedeći slajd
-  slideIndex++;
-  if (slideIndex >= slides.length) {
-    slideIndex = 0; // Vrati se na prvi slajd
-  }
+      // Prijeđi na sljedeći slajd
+      slideIndex++;
+      if (slideIndex >= slides.length) {
+        slideIndex = 0; // Vrati se na prvi slajd
+      }
 
-  // Prikaži novi slajd (fade-in)
-  if (slides[slideIndex]) {
-    slides[slideIndex].style.opacity = 1;
-  }
+      // Prikaži novi slajd (fade-in)
+      if (slides[slideIndex]) {
+        slides[slideIndex].style.opacity = 1;
+      }
 
-  // Promijeni slajd svakih 5 sekundi
-  setTimeout(showSlides, 5000);
-}
+      // Promijeni slajd svakih 5 sekundi
+      setTimeout(showSlides, 5000);
+    }
 
-// Inicijalno postavljanje slajdova
-function initializeSlides() {
-  let slides = document.getElementsByClassName("slide");
+    // Inicijalno postavljanje slajdova
+    function initializeSlides() {
+      let slides = document.getElementsByClassName("slide");
 
-  // Sakrij sve slajdove osim prvog
-  for (let i = 1; i < slides.length; i++) {
-    slides[i].style.opacity = 0;
-  }
+      // Sakrij sve slajdove osim prvog
+      for (let i = 1; i < slides.length; i++) {
+        slides[i].style.opacity = 0;
+      }
 
-  // Prikaži prvi slajd
-  if (slides[0]) {
-    slides[0].style.opacity = 1;
-  }
+      // Prikaži prvi slajd
+      if (slides[0]) {
+        slides[0].style.opacity = 1;
+      }
 
-  // Pokreni slideshow
-  setTimeout(showSlides, 5000);
-}
+      // Pokreni slideshow
+      setTimeout(showSlides, 5000);
+    }
 
-// Pokreni inicijalizaciju kada se stranica učita
-window.onload = initializeSlides;
+    // Pokreni inicijalizaciju kada se stranica učita
+    window.onload = initializeSlides;
   </script>
 </body>
 </html>

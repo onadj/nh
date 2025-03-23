@@ -1,1 +1,213 @@
-<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Contact</title><meta name='viewport' content='width=device-width, initial-scale=1.0'><link rel='stylesheet' href='assets/css/style.css'></head><body><h1>Contact Us</h1><form action='https://formspree.io/f/your_form_id' method='POST'><input type='text' name='name' placeholder='Your Name' required><input type='email' name='email' placeholder='Your Email' required><textarea name='message' placeholder='Your message'></textarea><button type='submit'>Send</button><input type='hidden' name='_next' value='thankyou.html'></form><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.739511474844!2d-6.260296684196055!3d53.34980597997902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e9acb0938f1%3A0x32c3a6efb3ec8b9c!2sDublin%2C%20Ireland!5e0!3m2!1sen!2sie!4v1614355443897!5m2!1sen!2sie' width='600' height='450' style='border:0;' allowfullscreen loading='lazy'></iframe></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CareHome Ireland – Contact</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      background-color: #fffaf3;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background-color: #fff6e6;
+      border-bottom: 1px solid #f0e6d6;
+    }
+    .navbar-brand img {
+      height: 50px;
+    }
+    .nav-link {
+      color: #705f3b !important;
+      font-weight: 500;
+    }
+    .nav-link:hover {
+      color: #b88900 !important;
+    }
+    .hero-section {
+      position: relative;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      overflow: hidden;
+    }
+    .hero-overlay {
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .hero-overlay h1,
+    .hero-overlay p,
+    .hero-overlay a {
+      color: #fff;
+    }
+    .btn-primary {
+      background-color: #b88900;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #a07800;
+    }
+    section {
+      padding: 60px 0;
+    }
+    h2, h3 {
+      color: #a07b1d;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #fff6e6;
+      color: #705f3b;
+    }
+    footer a {
+      color: #b88900;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #a07800;
+    }
+    footer i {
+      color: #b88900;
+      transition: color 0.3s ease;
+    }
+    footer i:hover {
+      color: #a07800;
+    }
+    .location-section {
+      margin-top: 60px;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .location-section iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 8px;
+    }
+    .location-section {
+      margin-top: 60px;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .map-container iframe {
+      width: 80%;  /* Adjusted width to make the map narrower */
+      height: 300px;
+      border: 2px solid #a07b1d;  /* Color of the border matches the page theme */
+      border-radius: 8px;
+    }
+
+    .map-container iframe:hover {
+      border-color: #705f3b; /* Hover effect for the border */
+    }
+
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0; /* Početna vrijednost za fade efekt */
+      transition: opacity 1s ease-in-out; /* Dodajte prijelaz */
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar (isti kao na Home i About Us) -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/images/logorandom.png" alt="New Ross Community CareHome" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Contact Us</h2>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <h3>Our Location</h3>
+          <p>14 Sliabh Ros, Newtownbarry, Bunclody, Co. Wexford, Y21 K339, Ireland</p>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCq5e_7XgUWu0VjmWw0nAFj0YnQ1RYmCk8&q=14+Sliabh+Ros%2C+Newtownbarry%2C+Bunclody%2C+Co.+Wexford%2C+Y21+K339%2C+Ireland" 
+            allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <h3>Get in Touch</h3>
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 text-center">
+    <div class="container">
+        <p class="mb-1">&copy; 2025 by Oliver Nad</p>
+      <a href="https://facebook.com" class="me-3" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="https://instagram.com" class="me-3" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="https://linkedin.com" class="me-3" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

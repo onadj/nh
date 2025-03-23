@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CareHome Ireland – Gallery</title>
+  <title>CareHome Ireland – Activities</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
     body {
@@ -142,56 +141,49 @@
       height: 100%;
       object-fit: cover;
     }
-    .gallery img {
-      margin-bottom: 15px;
-      border-radius: 8px;
-      transition: transform 0.3s ease;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
   </style>
 </head>
 <body>
-  <!-- Navbar (isti kao na Home i About Us) -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="assets/images/logorandom.png" alt="New Ross Community CareHome" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="assets/images/logorandom.png" alt="New Ross Community CareHome" />
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+              <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+              <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
 
   <section class="py-5">
     <div class="container">
-      <h2 class="text-center mb-5">Gallery</h2>
-      <div class="row gallery">
-        <div class="col-md-4 mb-4">
-          <a href="assets/images/gallery1.jpg" data-lightbox="gallery">
-            <img src="assets/images/gallery1-thumb.jpg" alt="Gallery Image 1" class="img-fluid rounded">
-          </a>
+      <h2 class="text-center mb-5">Activities Schedule</h2>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <h3>Weekly Activities</h3>
+          <ul>
+            <li>Monday: Yoga at 10:00</li>
+            <li>Tuesday: Music Therapy at 14:00</li>
+            <li>Wednesday: Nature Walk at 11:00</li>
+          </ul>
         </div>
-        <div class="col-md-4 mb-4">
-          <a href="assets/images/gallery2.jpg" data-lightbox="gallery">
-            <img src="assets/images/gallery2-thumb.jpg" alt="Gallery Image 2" class="img-fluid rounded">
-          </a>
-        </div>
-        <div class="col-md-4 mb-4">
-          <a href="assets/images/gallery3.jpg" data-lightbox="gallery">
-            <img src="assets/images/gallery3-thumb.jpg" alt="Gallery Image 3" class="img-fluid rounded">
-          </a>
+        <div class="col-md-6 mb-4">
+          <h3>Special Events</h3>
+          <ul>
+            <li>Monthly Birthday Celebrations</li>
+            <li>Seasonal Festivals</li>
+            <li>Guest Performances</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -207,6 +199,5 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </body>
 </html>
