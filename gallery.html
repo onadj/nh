@@ -125,6 +125,28 @@
     footer i:hover {
       color: #a07800;
     }
+    .back-to-top {
+      position: fixed;
+      bottom: 40px;
+      right: 30px;
+      z-index: 999;
+      background-color: #b88900;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .back-to-top:hover {
+      background-color: #a07800;
+      transform: translateY(-3px);
+    }
   </style>
 </head>
 <body>
@@ -182,7 +204,9 @@
       <a href="https://linkedin.com" class="me-3" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
     </div>
   </footer>
-
+  <button id="backToTop" class="back-to-top" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const images = document.querySelectorAll('.gallery img');
