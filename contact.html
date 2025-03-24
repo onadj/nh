@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CareHome Ireland – Contact</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #333;
       background-color: #fffaf3;
-      margin: 0;
-      padding: 0;
     }
     .navbar {
       background-color: #fff6e6;
@@ -27,31 +26,6 @@
     }
     .nav-link:hover {
       color: #b88900 !important;
-    }
-    .hero-section {
-      position: relative;
-      height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      overflow: hidden;
-    }
-    .hero-overlay {
-      z-index: 1;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 2rem;
-      border-radius: 10px;
-      text-align: center;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    .hero-overlay h1,
-    .hero-overlay p,
-    .hero-overlay a {
-      color: #fff;
     }
     .btn-primary {
       background-color: #b88900;
@@ -85,66 +59,101 @@
     footer i:hover {
       color: #a07800;
     }
-    .location-section {
-      margin-top: 60px;
-      padding: 20px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .location-section iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 8px;
-    }
-    .location-section {
-      margin-top: 60px;
-      padding: 20px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    .map-container {
+      margin-top: 20px;
       text-align: center;
     }
-
     .map-container iframe {
-      width: 80%;  /* Adjusted width to make the map narrower */
+      width: 100%;
       height: 300px;
-      border: 2px solid #a07b1d;  /* Color of the border matches the page theme */
+      border: 2px solid #a07b1d;
       border-radius: 8px;
     }
-
     .map-container iframe:hover {
-      border-color: #705f3b; /* Hover effect for the border */
+      border-color: #705f3b;
     }
-
-    .slideshow-container {
-      position: relative;
-      width: 100%;
-      height: 100%;
+    .back-to-top {
+      position: fixed;
+      bottom: 40px;
+      right: 30px;
+      z-index: 999;
+      background-color: #b88900;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
-
-    .slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0; /* Početna vrijednost za fade efekt */
-      transition: opacity 1s ease-in-out; /* Dodajte prijelaz */
+    .back-to-top:hover {
+      background-color: #a07800;
+      transform: translateY(-3px);
     }
-
-    .slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+    }
+    .dark-mode .navbar {
+      background-color: #2a2a2a;
+      border-bottom: 1px solid #333;
+    }
+    .dark-mode .nav-link {
+      color: #d4af37 !important;
+    }
+    .dark-mode .nav-link:hover {
+      color: #f5d062 !important;
+    }
+    .dark-mode h2, 
+    .dark-mode h3 {
+      color: #d4af37;
+    }
+    .dark-mode footer {
+      background-color: #2a2a2a;
+      color: #d4af37;
+    }
+    .dark-mode footer a,
+    .dark-mode footer i {
+      color: #d4af37;
+    }
+    .dark-mode footer a:hover,
+    .dark-mode footer i:hover {
+      color: #f5d062;
+    }
+    .dark-mode .form-control {
+      background-color: #333;
+      color: #fff;
+      border-color: #444;
+    }
+    .dark-mode .form-control:focus {
+      background-color: #444;
+      color: #fff;
+      border-color: #d4af37;
+      box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
+    }
+    .dark-mode .form-label {
+      color: #e0e0e0;
+    }
+    
+    /* Mobile specific styles */
+    @media (max-width: 767.98px) {
+      .contact-form {
+        order: 1;
+      }
+      .contact-map {
+        order: 2;
+        margin-top: 30px;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Navbar (isti kao na Home i About Us) -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
     <div class="container">
       <a class="navbar-brand" href="index.html">
@@ -157,9 +166,14 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+          <li class="nav-item">
+            <button id="darkModeToggle" class="btn btn-secondary">
+              <i class="fas fa-moon"></i> Dark Mode
+            </button>
+          </li>
         </ul>
       </div>
     </div>
@@ -169,15 +183,8 @@
     <div class="container">
       <h2 class="text-center mb-5">Contact Us</h2>
       <div class="row">
-        <div class="col-md-6 mb-4">
-          <h3>Our Location</h3>
-          <p>14 Sliabh Ros, Newtownbarry, Bunclody, Co. Wexford, Y21 K339, Ireland</p>
-          <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCq5e_7XgUWu0VjmWw0nAFj0YnQ1RYmCk8&q=14+Sliabh+Ros%2C+Newtownbarry%2C+Bunclody%2C+Co.+Wexford%2C+Y21+K339%2C+Ireland" 
-            allowfullscreen="" loading="lazy"></iframe>
-          </div>
-        </div>
-        <div class="col-md-6 mb-4">
+        <!-- Form column - will be first on mobile -->
+        <div class="col-md-6 mb-4 contact-form">
           <h3>Get in Touch</h3>
           <form>
             <div class="mb-3">
@@ -195,19 +202,60 @@
             <button type="submit" class="btn btn-primary">Send Message</button>
           </form>
         </div>
+        
+        <!-- Map column - will be second on mobile -->
+        <div class="col-md-6 mb-4 contact-map">
+          <h3>Our Location</h3>
+          <p>14 Sliabh Ros, Newtownbarry, Bunclody, Co. Wexford, Y21 K339, Ireland</p>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCq5e_7XgUWu0VjmWw0nAFj0YnQ1RYmCk8&q=14+Sliabh+Ros%2C+Newtownbarry%2C+Bunclody%2C+Co.+Wexford%2C+Y21+K339%2C+Ireland" 
+            allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <footer class="py-4 text-center">
     <div class="container">
-        <p class="mb-1">&copy; 2025 by Oliver Nad</p>
+      <p class="mb-1">&copy; 2025 by Oliver Nad</p>
       <a href="https://facebook.com" class="me-3" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
       <a href="https://instagram.com" class="me-3" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
       <a href="https://linkedin.com" class="me-3" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
     </div>
   </footer>
 
+  <button id="backToTop" class="back-to-top" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTopBtn = document.getElementById("backToTop");
+      window.addEventListener("scroll", () => {
+        backToTopBtn.style.display = window.scrollY > 300 ? "flex" : "none";
+      });
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        document.querySelector('.navbar').classList.toggle('dark-mode');
+
+        const icon = darkModeToggle.querySelector('i');
+        icon.classList.toggle('fa-sun');
+        icon.classList.toggle('fa-moon');
+
+        const navbarCollapse = document.getElementById('navbarNav');
+        if (navbarCollapse.classList.contains('show')) {
+          const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: true });
+          bsCollapse.hide();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
