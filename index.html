@@ -239,6 +239,30 @@
       font-size: 0.8rem;
     }
 
+    @media (max-width: 768px) {
+  .hero-overlay {
+    background: transparent !important;
+    padding: 1rem;
+  }
+
+  .hero-overlay p, 
+  .hero-overlay a {
+    display: none; /* Sakrij 'Welcome to...' i gumb na malim ekranima */
+  }
+
+  .hero-overlay h1 {
+    font-size: 2rem;
+    color: #ffd700; /* Možeš promijeniti ako želiš drugu nijansu */
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+  }
+
+  .hero-section {
+    align-items: flex-end;
+    padding-bottom: 2rem;
+  }
+}
+
+
      /* Progress Bar Custom Styling */
   .progress {
     height: 1.5rem;
