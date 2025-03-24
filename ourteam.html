@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareHome Ireland – Our Team</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      background-color: #fffaf3;
+    }
+    .navbar {
+      background-color: #fff6e6;
+      border-bottom: 1px solid #f0e6d6;
+    }
+    .navbar-brand img {
+      height: 50px;
+    }
+    .nav-link {
+      color: #705f3b !important;
+      font-weight: 500;
+    }
+    .nav-link:hover {
+      color: #b88900 !important;
+    }
+    .hero-section {
+      position: relative;
+      height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      overflow: hidden;
+      background: url('assets/images/team-hero.jpg') center/cover no-repeat;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .hero-overlay h1 {
+      font-size: 3rem;
+      color: white;
+      margin-bottom: 1rem;
+    }
+    .hero-overlay p {
+      font-size: 1.2rem;
+      color: white;
+      max-width: 800px;
+    }
+    .team-section {
+      padding: 60px 0;
+    }
+    .section-title {
+      color: #a07b1d;
+      font-weight: bold;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    .section-subtitle {
+      color: #705f3b;
+      text-align: center;
+      margin-bottom: 4rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .team-card {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 30px;
+      height: 100%;
+    }
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    .team-img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-bottom: 3px solid #b88900;
+    }
+    .team-info {
+      padding: 20px;
+      text-align: center;
+    }
+    .team-name {
+      color: #a07b1d;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .team-position {
+      color: #b88900;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+    .team-bio {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .board-section {
+      background-color: #fff6e6;
+      padding: 60px 0;
+    }
+    .board-card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      height: 100%;
+      transition: transform 0.3s ease;
+    }
+    .board-card:hover {
+      transform: translateY(-5px);
+    }
+    .board-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #b88900;
+      margin: 0 auto 15px;
+    }
+    .board-name {
+      color: #a07b1d;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .board-position {
+      color: #705f3b;
+      font-size: 0.9rem;
+    }
+    footer {
+      background-color: #fff6e6;
+      color: #705f3b;
+    }
+    footer a {
+      color: #b88900;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #a07800;
+    }
+    footer i {
+      color: #b88900;
+      transition: color 0.3s ease;
+    }
+    footer i:hover {
+      color: #a07800;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 40px;
+      right: 30px;
+      z-index: 999;
+      background-color: #b88900;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .back-to-top:hover {
+      background-color: #a07800;
+      transform: translateY(-3px);
+    }
+    
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+    }
+    .dark-mode .navbar {
+      background-color: #2a2a2a;
+      border-bottom: 1px solid #333;
+    }
+    .dark-mode .nav-link {
+      color: #d4af37 !important;
+    }
+    .dark-mode .nav-link:hover {
+      color: #f5d062 !important;
+    }
+    .dark-mode .hero-overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    .dark-mode .team-card,
+    .dark-mode .board-card {
+      background-color: #333;
+    }
+    .dark-mode .team-name,
+    .dark-mode .board-name {
+      color: #d4af37;
+    }
+    .dark-mode .team-position {
+      color: #f5d062;
+    }
+    .dark-mode .team-bio {
+      color: #ccc;
+    }
+    .dark-mode .board-section {
+      background-color: #2a2a2a;
+    }
+    .dark-mode .board-position {
+      color: #ddd;
+    }
+    .dark-mode footer {
+      background-color: #2a2a2a;
+      color: #d4af37;
+    }
+    .dark-mode footer a,
+    .dark-mode footer i {
+      color: #d4af37;
+    }
+    .dark-mode footer a:hover,
+    .dark-mode footer i:hover {
+      color: #f5d062;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="assets/images/logorandom.png" alt="CareHome Logo" />
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="ourteam.html">Our Team</a></li>
+              <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+              <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+              <li class="nav-item">
+                <button id="darkModeToggle" class="btn btn-secondary">
+                  <i class="fas fa-moon"></i> Dark Mode
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  <section class="hero-section">
+    <div class="hero-overlay">
+      <h1>Our Team</h1>
+      <p>We proudly introduce you to the compassionate individuals who make our mission of care possible every day. From our dedicated healthcare professionals to our passionate administrative staff, each member of our team plays a vital role in fostering a supportive and nurturing environment for our residents.</p>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="container">
+      <h2 class="section-title">Meet Our Dedicated Team</h2>
+      <p class="section-subtitle">Discover the Faces Behind Compassionate Care</p>
+      
+      <div class="row">
+        <!-- Team Member 1 -->
+        <div class="col-md-4">
+          <div class="team-card">
+            <img src="assets/images/director.jpg" alt="Sarah Johnson" class="team-img">
+            <div class="team-info">
+              <h3 class="team-name">Sarah Johnson</h3>
+              <p class="team-position">Director of Nursing</p>
+              <p class="team-bio">With over 20 years of experience in geriatric care, Sarah leads our nursing team with compassion and expertise.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Team Member 2 -->
+        <div class="col-md-4">
+          <div class="team-card">
+            <img src="assets/images/director.jpg" alt="Emily Wilson" class="team-img">
+            <div class="team-info">
+              <h3 class="team-name">Emily Wilson</h3>
+              <p class="team-position">Assistant Director of Nursing</p>
+              <p class="team-bio">Emily brings a wealth of knowledge in dementia care and staff training to our facility.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Team Member 3 -->
+        <div class="col-md-4">
+          <div class="team-card">
+            <img src="assets/images/director.jpg" alt="Jessica Brown" class="team-img">
+            <div class="team-info">
+              <h3 class="team-name">Jessica Brown</h3>
+              <p class="team-position">Senior Operations & HR Administrator</p>
+              <p class="team-bio">Jessica ensures our home runs smoothly while maintaining our high standards of care.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Team Member 4 -->
+        <div class="col-md-4">
+          <div class="team-card">
+            <img src="assets/images/director.jpg" alt="Amanda Taylor" class="team-img">
+            <div class="team-info">
+              <h3 class="team-name">Amanda Taylor</h3>
+              <p class="team-position">Financial Accountant</p>
+              <p class="team-bio">Amanda manages our financial operations with precision and care.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Team Member 5 -->
+        <div class="col-md-4">
+          <div class="team-card">
+            <img src="assets/images/director.jpg" alt="Olivia Davis" class="team-img">
+            <div class="team-info">
+              <h3 class="team-name">Olivia Davis</h3>
+              <p class="team-position">Administrative Assistant</p>
+              <p class="team-bio">Olivia is often the first friendly face visitors see when they come to our home.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Team Member 6 -->
+        <div class="col-md-4">
+          <div class="team-card">
+            <img src="assets/images/director.jpg" alt="Michael Smith" class="team-img">
+            <div class="team-info">
+              <h3 class="team-name">Michael Smith</h3>
+              <p class="team-position">Head of Care</p>
+              <p class="team-bio">Michael oversees our daily care operations with dedication and warmth.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="board-section">
+    <div class="container">
+      <h2 class="section-title">Directing Our Vision</h2>
+      <p class="section-subtitle">Introducing Our Dedicated Board of Directors</p>
+      
+      <div class="row">
+        <!-- Board Member 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="board-card">
+            <img src="assets/images/muskidirector.jpg"  alt="Robert Johnson" class="board-img">
+            <h3 class="board-name">Robert Johnson</h3>
+            <p class="board-position">Chairperson</p>
+          </div>
+        </div>
+        
+        <!-- Board Member 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="board-card">
+            <img src="assets/images/director.jpg" alt="Jennifer Williams" class="board-img">
+            <h3 class="board-name">Jennifer Williams</h3>
+            <p class="board-position">Vice-Chairperson</p>
+          </div>
+        </div>
+        
+        <!-- Board Member 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="board-card">
+            <img src="assets/images/muskidirector.jpg" alt="David Wilson" class="board-img">
+            <h3 class="board-name">David Wilson</h3>
+            <p class="board-position">Company Secretary</p>
+          </div>
+        </div>
+        
+        <!-- Board Member 4 -->
+        <div class="col-md-6 mb-4">
+          <div class="board-card">
+            <img src="assets/images/muskidirector.jpg"alt="James Brown" class="board-img">
+            <h3 class="board-name">James Brown</h3>
+            <p class="board-position">Director</p>
+          </div>
+        </div>
+        
+        <!-- Board Member 5 -->
+        <div class="col-md-6 mb-4">
+          <div class="board-card">
+            <img src="assets/images/director.jpg" alt="Patricia Miller" class="board-img">
+            <h3 class="board-name">Patricia Miller</h3>
+            <p class="board-position">Director</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 text-center">
+    <div class="container">
+      <p class="mb-1">&copy; 2025 by Oliver Nad</p>
+      <a href="https://facebook.com" class="me-3" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="https://instagram.com" class="me-3" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="https://linkedin.com" class="me-3" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTopBtn = document.getElementById("backToTop");
+      window.addEventListener("scroll", () => {
+        backToTopBtn.style.display = window.scrollY > 300 ? "flex" : "none";
+      });
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        document.querySelector('.navbar').classList.toggle('dark-mode');
+
+        const icon = darkModeToggle.querySelector('i');
+        icon.classList.toggle('fa-sun');
+        icon.classList.toggle('fa-moon');
+
+        const navbarCollapse = document.getElementById('navbarNav');
+        if (navbarCollapse.classList.contains('show')) {
+          const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: true });
+          bsCollapse.hide();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
