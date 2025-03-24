@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CareHome Ireland – Contact</title>
+  <title>CareHome Ireland – Thank You</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -27,19 +27,35 @@
     .nav-link:hover {
       color: #b88900 !important;
     }
+    .thank-you-section {
+      padding: 100px 0;
+      text-align: center;
+    }
+    h1, h2, h3 {
+      color: #a07b1d;
+      font-weight: bold;
+    }
+    .thank-you-icon {
+      font-size: 5rem;
+      color: #b88900;
+      margin-bottom: 2rem;
+    }
+    .thank-you-img {
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #a07b1d;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      margin: 2rem auto;
+    }
     .btn-primary {
       background-color: #b88900;
       border: none;
+      padding: 10px 25px;
+      margin-top: 20px;
     }
     .btn-primary:hover {
       background-color: #a07800;
-    }
-    section {
-      padding: 60px 0;
-    }
-    h2, h3 {
-      color: #a07b1d;
-      font-weight: bold;
     }
     footer {
       background-color: #fff6e6;
@@ -58,19 +74,6 @@
     }
     footer i:hover {
       color: #a07800;
-    }
-    .map-container {
-      margin-top: 20px;
-      text-align: center;
-    }
-    .map-container iframe {
-      width: 100%;
-      height: 300px;
-      border: 2px solid #a07b1d;
-      border-radius: 8px;
-    }
-    .map-container iframe:hover {
-      border-color: #705f3b;
     }
     .back-to-top {
       position: fixed;
@@ -110,6 +113,7 @@
     .dark-mode .nav-link:hover {
       color: #f5d062 !important;
     }
+    .dark-mode h1,
     .dark-mode h2, 
     .dark-mode h3 {
       color: #d4af37;
@@ -126,30 +130,8 @@
     .dark-mode footer i:hover {
       color: #f5d062;
     }
-    .dark-mode .form-control {
-      background-color: #333;
-      color: #fff;
-      border-color: #444;
-    }
-    .dark-mode .form-control:focus {
-      background-color: #444;
-      color: #fff;
-      border-color: #d4af37;
-      box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
-    }
-    .dark-mode .form-label {
-      color: #e0e0e0;
-    }
-    
-    /* Mobile specific styles */
-    @media (max-width: 767.98px) {
-      .contact-form {
-        order: 1;
-      }
-      .contact-map {
-        order: 2;
-        margin-top: 30px;
-      }
+    .dark-mode .thank-you-icon {
+      color: #d4af37;
     }
   </style>
 </head>
@@ -168,7 +150,7 @@
           <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
           <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
-          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           <li class="nav-item">
             <button id="darkModeToggle" class="btn btn-secondary">
               <i class="fas fa-moon"></i> Dark Mode
@@ -179,43 +161,24 @@
     </div>
   </nav>
 
-  <section class="py-5">
+  <section class="thank-you-section">
     <div class="container">
-      <h2 class="text-center mb-5">Contact Us</h2>
-      <div class="row">
-        <!-- Form column - will be first on mobile -->
-        <div class="col-md-6 mb-4 contact-form">
-          <h3>Get in Touch</h3>
-          <form action="https://formspree.io/f/xldjnplv" method="POST">
-            <input type="hidden" name="_subject" value="New message from website">
-            <input type="hidden" name="_next" value="https://onadj.github.io/nh/thank-you.html">
-            <input type="text" name="_gotcha" style="display:none"> <!-- Anti-spam -->
-            
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" name="name" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Message</label>
-              <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="thank-you-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h1 class="mb-4">Thank You!</h1>
+          <p class="lead">Your message has been successfully sent. We appreciate you reaching out to us.</p>
+          <p>Our team will get back to you as soon as possible. Typically, we respond within 24-48 hours.</p>
           
+          <!-- Placeholder image - replace with your own image if desired -->
+          <img src="https://via.placeholder.com/600x400?text=Thank+You" alt="Thank you" class="thank-you-img">
           
-        </div>
-        
-        <!-- Map column - will be second on mobile -->
-        <div class="col-md-6 mb-4 contact-map">
-          <h3>Our Location</h3>
-          <p>14 Sliabh Ros, Newtownbarry, Bunclody, Co. Wexford, Y21 K339, Ireland</p>
-          <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCq5e_7XgUWu0VjmWw0nAFj0YnQ1RYmCk8&q=14+Sliabh+Ros%2C+Newtownbarry%2C+Bunclody%2C+Co.+Wexford%2C+Y21+K339%2C+Ireland" 
-            allowfullscreen="" loading="lazy"></iframe>
+          <div class="mt-5">
+            <p>In the meantime, you might want to:</p>
+            <a href="index.html" class="btn btn-primary me-2">Return Home</a>
+            <a href="contact.html" class="btn btn-outline-secondary">Send Another Message</a>
           </div>
         </div>
       </div>
@@ -262,45 +225,6 @@
         }
       });
     });
-
-    // Form submission handler
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.querySelector('form[action*="formspree.io"]');
-  if(form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Show loading state
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
-      submitBtn.disabled = true;
-      
-      // Submit form
-      const formData = new FormData(form);
-      fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      })
-      .then(response => {
-        if(response.ok) {
-          // Redirect to thank you page
-          window.location.href = form.querySelector('[name="_next"]').value;
-        } else {
-          throw new Error('Form submission failed');
-        }
-      })
-      .catch(error => {
-        alert('There was a problem submitting your form. Please try again.');
-        submitBtn.innerHTML = originalBtnText;
-        submitBtn.disabled = false;
-      });
-    });
-  }
-});
   </script>
 </body>
 </html>
