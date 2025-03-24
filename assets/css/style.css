@@ -1,100 +1,148 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
-    background-color: #fffaf3;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Navigacija */
-  .navbar {
-    background-color: #fff6e6;
-    border-bottom: 1px solid #f0e6d6;
-  }
-  
-  .navbar-brand {
-    font-weight: bold;
-    color: #b88900 !important;
-  }
-  
-  .nav-link {
-    color: #705f3b !important;
-    font-weight: 500;
-  }
-  
-  .nav-link:hover {
-    color: #b88900 !important;
-  }
-  
-  /* Hero sekcija */
-  .hero-section {
-    position: relative;
-    background: url('assets/images/hero.jpg') center/cover no-repeat;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.6);
-  }
-  
-  .hero-overlay {
-    background: rgba(0, 0, 0, 0.4);
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-  }
-  
-  .hero-overlay h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .hero-overlay p {
-    font-size: 1.2rem;
-  }
-  
-  .hero-overlay .btn {
-    background-color: #b88900;
-    border: none;
-  }
-  
-  .hero-overlay .btn:hover {
-    background-color: #a07800;
-  }
-  
-  /* Sekcija sadržaja */
-  section {
-    padding: 60px 0;
-  }
-  
-  h2, h3 {
-    color: #a07b1d;
-    font-weight: bold;
+.progress-section h3 {
+  color: #705f3b;
   }
   
   /* Footer */
   footer {
-    background-color: #fff6e6;
-    color: #705f3b;
+  background-color: #fff6e6;
+  color: #705f3b;
+  transition: all 0.3s ease;
   }
   
   footer a {
-    color: #b88900;
-    text-decoration: none;
+  color: #b88900;
+  text-decoration: none;
+  transition: color 0.3s ease;
   }
   
   footer a:hover {
-    color: #a07800;
+  color: #a07800;
   }
   
-  /* Ikone društvenih mreža */
   footer i {
-    color: #b88900;
-    transition: color 0.3s ease;
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  transition: transform 0.3s ease;
   }
   
   footer i:hover {
-    color: #a07800;
+  transform: translateY(-5px);
   }
+  
+  /* Dark Mode Styles */
+  .dark-mode {
+  background-color: #222;
+  color: #f0f0f0;
+  }
+  
+  .dark-mode .navbar {
+  background-color: #333 !important;
+  border-bottom-color: #444;
+  }
+  
+  .dark-mode .hero-overlay {
+  background: rgba(40, 40, 40, 0.8) !important;
+  }
+  
+  .dark-mode .card {
+  background-color: #444 !important;
+  color: #fff !important;
+  border-color: #555 !important;
+  }
+  
+  .dark-mode .progress-section,
+  .dark-mode .testimonials,
+  .dark-mode .video-section,
+  .dark-mode .why-choose-us {
+  background-color: #333 !important;
+  color: #f0f0f0;
+  }
+  
+  .dark-mode .nav-link {
+  color: #ccc !important;
+  }
+  
+  .dark-mode .nav-link:hover {
+  color: #b88900 !important;
+  }
+  
+  .dark-mode .progress {
+  background-color: #444 !important;
+  border-color: #555 !important;
+  }
+  
+  .dark-mode .testimonial-text {
+  color: #ddd !important;
+  }
+  
+  .dark-mode .location-section {
+  background-color: #444 !important;
+  border-color: #555 !important;
+  color: #f0f0f0;
+  }
+  
+  .dark-mode footer {
+  background-color: #333 !important;
+  color: #ccc !important;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+  }
+  
+  @keyframes fadeInDown {
+  from {
+  opacity: 0;
+  transform: translateY(-20px);
+  }
+  to {
+  opacity: 1;
+  transform: translateY(0);
+  }
+  }
+  
+  @keyframes fadeInUp {
+  from {
+  opacity: 0;
+  transform: translateY(20px);
+  }
+  to {
+  opacity: 1;
+  transform: translateY(0);
+  }
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+  .carousel-control {
+  width: 25px;
+  height: 25px;
+  }
+  
+  .carousel-arrow {
+  font-size: 0.8rem;
+  }
+  
+  .hero-overlay h1 {
+  font-size: 2.5rem;
+  }
+  
+  .hero-overlay p {
+  font-size: 1.2rem;
+  }
+  
+  .navbar-collapse {
+  background-color: #fff6e6;
+  padding: 1rem;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .dark-mode .navbar-collapse {
+  background-color: #333 !important;
+  }
+  }
+  
+  
