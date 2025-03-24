@@ -209,6 +209,16 @@
   </button>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+      // Back to Top Button
+      const backToTopBtn = document.getElementById("backToTop");
+      window.addEventListener("scroll", () => {
+        backToTopBtn.style.display = window.scrollY > 300 ? "flex" : "none";
+      });
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+  
+      // Lightbox Gallery
       const images = document.querySelectorAll('.gallery img');
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = lightbox.querySelector('img');
@@ -216,38 +226,39 @@
       const nextBtn = lightbox.querySelector('.next');
       const prevBtn = lightbox.querySelector('.prev');
       let currentIndex = 0;
-
+  
       function showImage(index) {
         lightboxImg.src = images[index].src;
         lightbox.style.display = 'flex';
         currentIndex = index;
       }
-
+  
       images.forEach((img, index) => {
         img.addEventListener('click', () => showImage(index));
       });
-
+  
       closeBtn.addEventListener('click', () => lightbox.style.display = 'none');
-
+  
       nextBtn.addEventListener('click', () => {
         currentIndex = (currentIndex + 1) % images.length;
         showImage(currentIndex);
       });
-
+  
       prevBtn.addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + images.length) % images.length;
         showImage(currentIndex);
       });
-
+  
+      // Dark Mode Toggle
       const darkModeToggle = document.getElementById('darkModeToggle');
       darkModeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         document.querySelector('.navbar').classList.toggle('dark-mode');
-
+  
         const icon = darkModeToggle.querySelector('i');
         icon.classList.toggle('fa-sun');
         icon.classList.toggle('fa-moon');
-
+  
         const navbarCollapse = document.getElementById('navbarNav');
         if (navbarCollapse.classList.contains('show')) {
           const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: true });
