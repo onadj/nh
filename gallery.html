@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CareHome Ireland – Gallery</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
     body {
@@ -29,44 +29,83 @@
     .nav-link:hover {
       color: #b88900 !important;
     }
-    .hero-section {
-      position: relative;
-      height: 80vh;
+    h2 {
+      color: #a07b1d;
+      font-weight: bold;
+      margin: 40px 0;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 15px 60px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      border-radius: 10px;
+      border: 2px solid #a07b1d;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 10px;
+      border: 2px solid #fff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+    .lightbox .close, .lightbox .prev, .lightbox .next {
+      position: absolute;
+      background-color: #b88900;
+      border: none;
+      color: white;
+      font-size: 18px;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      overflow: hidden;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
-    .hero-overlay {
-      z-index: 1;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 2rem;
-      border-radius: 10px;
-      text-align: center;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    .hero-overlay h1,
-    .hero-overlay p,
-    .hero-overlay a {
-      color: #fff;
-    }
-    .btn-primary {
-      background-color: #b88900;
-      border: none;
-    }
-    .btn-primary:hover {
+    .lightbox .close:hover,
+    .lightbox .prev:hover,
+    .lightbox .next:hover {
       background-color: #a07800;
     }
-    section {
-      padding: 60px 0;
+    .lightbox .close {
+      top: 20px;
+      right: 20px;
     }
-    h2, h3 {
-      color: #a07b1d;
-      font-weight: bold;
+    .lightbox .prev {
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .lightbox .next {
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
     }
     footer {
       background-color: #fff6e6;
@@ -86,78 +125,13 @@
     footer i:hover {
       color: #a07800;
     }
-    .location-section {
-      margin-top: 60px;
-      padding: 20px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .location-section iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 8px;
-    }
-    .location-section {
-      margin-top: 60px;
-      padding: 20px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    .map-container iframe {
-      width: 80%;  /* Adjusted width to make the map narrower */
-      height: 300px;
-      border: 2px solid #a07b1d;  /* Color of the border matches the page theme */
-      border-radius: 8px;
-    }
-
-    .map-container iframe:hover {
-      border-color: #705f3b; /* Hover effect for the border */
-    }
-
-    .slideshow-container {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-
-    .slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0; /* Početna vrijednost za fade efekt */
-      transition: opacity 1s ease-in-out; /* Dodajte prijelaz */
-    }
-
-    .slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .gallery img {
-      margin-bottom: 15px;
-      border-radius: 8px;
-      transition: transform 0.3s ease;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
   </style>
 </head>
 <body>
-  <!-- Navbar (isti kao na Home i About Us) -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
     <div class="container">
       <a class="navbar-brand" href="index.html">
-        <img src="assets/images/logorandom.png" alt="New Ross Community CareHome" />
+        <img src="assets/images/logorandom.png" alt="CareHome Logo">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -169,44 +143,95 @@
           <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item">
+            <button id="darkModeToggle" class="btn btn-secondary">
+              <i class="fas fa-moon"></i> Dark Mode
+            </button>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <section class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-5">Gallery</h2>
-      <div class="row gallery">
-        <div class="col-md-4 mb-4">
-          <a href="assets/images/gallery1.jpg" data-lightbox="gallery">
-            <img src="assets/images/gallery1-thumb.jpg" alt="Gallery Image 1" class="img-fluid rounded">
-          </a>
-        </div>
-        <div class="col-md-4 mb-4">
-          <a href="assets/images/gallery2.jpg" data-lightbox="gallery">
-            <img src="assets/images/gallery2-thumb.jpg" alt="Gallery Image 2" class="img-fluid rounded">
-          </a>
-        </div>
-        <div class="col-md-4 mb-4">
-          <a href="assets/images/gallery3.jpg" data-lightbox="gallery">
-            <img src="assets/images/gallery3-thumb.jpg" alt="Gallery Image 3" class="img-fluid rounded">
-          </a>
-        </div>
-      </div>
+  <div class="container text-center">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="assets/images/gallery1.jpg" alt="Gallery Image 1">
+      <img src="assets/images/gallery2.jpg" alt="Gallery Image 2">
+      <img src="assets/images/gallery3.jpg" alt="Gallery Image 3">
+      <img src="assets/images/gallery4.jpg" alt="Gallery Image 4">
+      <img src="assets/images/gallery5.jpg" alt="Gallery Image 5">
+      <img src="assets/images/gallery6.jpg" alt="Gallery Image 6">
+      <img src="assets/images/gallery7.jpg" alt="Gallery Image 7">
+      <img src="assets/images/gallery8.jpg" alt="Gallery Image 8">
     </div>
-  </section>
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <button class="close" aria-label="Close">&times;</button>
+    <button class="prev" aria-label="Previous">&#8249;</button>
+    <img src="" alt="Enlarged Image">
+    <button class="next" aria-label="Next">&#8250;</button>
+  </div>
 
   <footer class="py-4 text-center">
     <div class="container">
-        <p class="mb-1">&copy; 2025 by Oliver Nad</p>
+      <p class="mb-1">&copy; 2025 by Oliver Nad</p>
       <a href="https://facebook.com" class="me-3" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
       <a href="https://instagram.com" class="me-3" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
       <a href="https://linkedin.com" class="me-3" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
     </div>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const images = document.querySelectorAll('.gallery img');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = lightbox.querySelector('img');
+      const closeBtn = lightbox.querySelector('.close');
+      const nextBtn = lightbox.querySelector('.next');
+      const prevBtn = lightbox.querySelector('.prev');
+      let currentIndex = 0;
+
+      function showImage(index) {
+        lightboxImg.src = images[index].src;
+        lightbox.style.display = 'flex';
+        currentIndex = index;
+      }
+
+      images.forEach((img, index) => {
+        img.addEventListener('click', () => showImage(index));
+      });
+
+      closeBtn.addEventListener('click', () => lightbox.style.display = 'none');
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      });
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+      });
+
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        document.querySelector('.navbar').classList.toggle('dark-mode');
+
+        const icon = darkModeToggle.querySelector('i');
+        icon.classList.toggle('fa-sun');
+        icon.classList.toggle('fa-moon');
+
+        const navbarCollapse = document.getElementById('navbarNav');
+        if (navbarCollapse.classList.contains('show')) {
+          const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: true });
+          bsCollapse.hide();
+        }
+      });
+    });
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </body>
 </html>
